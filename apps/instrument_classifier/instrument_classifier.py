@@ -26,4 +26,4 @@ if uploader_image is not None:
 
     prediction, prediction_index, probability = instrument_model.predict(image)
     st.text(f"predicted: {prediction}, probability: {probability[prediction_index]}")
-    st.image(pImage.open(uploader_image))
+    st.image(image)
