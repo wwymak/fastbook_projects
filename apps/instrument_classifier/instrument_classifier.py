@@ -1,9 +1,9 @@
 import streamlit as st
-import torch.nn as nn
-st.write(nn)
-st.text('here')
+from pathlib import Path
 from fastai.learner import load_learner
 from fastai.vision.core import PILImage
+
+current_folder = Path(__file__.parent)
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 st.title('Instrument classifier')
@@ -14,7 +14,8 @@ uploader_image = st.file_uploader("upload your image to be classified", key="inp
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    return load_learner("instrument_classifier.pkl")
+
+    return load_learner(current_folder/"instrument_classifier.pkl")
 
 
 instrument_model = load_model()
