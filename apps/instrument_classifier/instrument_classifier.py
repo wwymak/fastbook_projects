@@ -1,5 +1,6 @@
 import streamlit as st
 from pathlib import Path
+from PIL import Image as pImage
 from fastai.learner import load_learner
 from fastai.vision.core import PILImage
 
@@ -25,4 +26,4 @@ if uploader_image is not None:
 
     prediction, prediction_index, probability = instrument_model.predict(image)
     st.text(f"predicted: {prediction}, probability: {probability[prediction_index]}")
-    st.image(image)
+    st.image(pImage.open(image))
