@@ -1,4 +1,7 @@
 import streamlit as st
+import torch.nn as nn
+st.write(nn)
+st.text('here')
 from fastai.learner import load_learner
 from fastai.vision.core import PILImage
 
