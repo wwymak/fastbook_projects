@@ -3,7 +3,7 @@ from pathlib import Path
 from fastai.learner import load_learner
 from fastai.vision.core import PILImage
 
-current_folder = Path(__file__.parent)
+current_folder = Path(__file__).parent
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 st.title('Instrument classifier')
